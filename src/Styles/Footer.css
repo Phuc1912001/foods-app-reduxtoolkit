@@ -62,7 +62,7 @@
 }
 .newsletter span{
     background: #212245;
-    padding: 5px 30px;
+    padding: 5px 20px;
     border-radius: 5px;
 }
 .newsletter span i {
@@ -83,4 +83,44 @@
 .coppyright__text {
     font-size: .8rem;
     color: #df2020;
+}
+
+@media only screen and (max-width:768px) {
+    .footer__title{
+        font-size: 0.8rem;
+    }
+    .delivery__time-item span {
+        font-size: 0.8rem;
+    }
+    .delivery__time-item p {
+        font-size: 0.7rem;
+        margin-bottom: 0;
+    }
+
+    .newsletter input {
+        padding: 7px ;
+        font-size: 0.7rem;
+    }
+    .newsletter span {
+        padding: 4px 20px;
+        font-size: 0.7rem;
+    }
+    
+}
+@media only screen and (max-width:576) {
+    .coppyright__text {
+        text-align: center;
+    }
+    .social__link {
+        justify-content: center !important;
+    }
+    .social__link p {
+        font-size: 0.8rem;
+    }
+    .social__link span {
+        padding:  4px;
+    }
+    .social__link span a {
+        font-size: 0.7rem;
+    }
 }

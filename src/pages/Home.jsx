@@ -21,6 +21,10 @@ import ProductCard from "../components/UI/ProductCard/ProductCard.jsx";
 
 import whyImg from "../assets/images/location.png";
 
+import networkImg from "../assets/images/network.png";
+
+import TestimonialSlider from "../components/UI/Slider/TestimonialSlider.jsx";
+
 const featureData = [
   {
     title: "Quick Delivery",
@@ -155,7 +159,7 @@ const Home = () => {
             </Col>
 
             {featureData.map((item, index) => (
-              <Col lg="4" md="4" key={index} className="mt-5">
+              <Col lg="4" md="6" sm='6' key={index} className="mt-5">
                 <div className="feature__item text-center px-5 py-3">
                   <img
                     src={item.imgUrl}
@@ -221,7 +225,7 @@ const Home = () => {
             </Col>
 
             {allProduct.map((item) => (
-              <Col lg="3" md="4" key={item.id} className="mt-5">
+              <Col lg="3" md="4" sm='6' xs='6' key={item.id} className="mt-5">
                 <ProductCard item={item} />
               </Col>
             ))}
@@ -229,7 +233,7 @@ const Home = () => {
         </Container>
       </section>
 
-      <section>
+      <section className="why__choose-us">
         <Container>
           <Row>
             <Col lg="6" md="6">
@@ -292,10 +296,34 @@ const Home = () => {
               <h2>Hot Pizza</h2>
             </Col>
             {hotPizza.map((item) => (
-              <Col lg="3" md="4" key={item.id}>
+              <Col lg="3" md="4" sm='6' xs='6' key={item.id}>
                 <ProductCard item={item} />
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <div className="testimonial ">
+                <h5 className="testimonial__subtitle mb-4">Testimonial</h5>
+                <h2 className="testimonial__title mb-4">
+                  What out <span>customers</span> are saying
+                </h2>
+                <p className="testimonial__desc">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Necessitatibus, quibusdam eligendi tempora nemo earum tenetur
+                  deserunt autem ad dolorem magni?
+                </p>
+                <TestimonialSlider/>
+              </div>
+            </Col>
+            <Col lg="6" md="6">
+              <img src={networkImg} alt="testimonial-img" className="w-100" />
+            </Col>
           </Row>
         </Container>
       </section>
