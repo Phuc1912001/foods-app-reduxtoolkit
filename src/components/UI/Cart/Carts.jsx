@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import {ListGroup} from 'reactstrap'
 import CartItem from './CartItem'
 
@@ -11,12 +11,18 @@ import '../../../Styles/Shopping-Cart.css'
 const Carts = () => {
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     
     const cartProducts = useSelector(state =>  state.cart.cartItem)
     const totalAmount = useSelector(state => state.cart.totalAmount)
 
     const toggleCart = () => {
+        dispatch(cartUiActions.toggle())
+    }
+
+    const handleChekout = ( ) => {
+        navigate('/checkout')
         dispatch(cartUiActions.toggle())
     }
 
@@ -39,7 +45,7 @@ const Carts = () => {
             </div>
             <div className="cart__bottom  d-flex align-items-center justify-content-between ">
                 <h6>Subtotal : <span>${totalAmount}</span></h6>
-                <button><Link to='/checkout'>Checkout</Link></button>
+                <button onClick={handleChekout}>Checkout</button>
             </div>
         </ListGroup>
     </div>
